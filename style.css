@@ -1,0 +1,104 @@
+/* style.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ffe0ec, #fff7f9);
+  color: #333;
+}
+
+header {
+  background-color: #ff4d6d;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #ff8fa3;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.filters {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+select {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #555;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: #ff6b81;
+  box-shadow: 0 2px 8px rgba(255, 107, 129, 0.3);
+}
+
+main {
+  padding: 2rem 3vw;
+}
+
+.product-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.product-card {
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff6b81;
+  box-shadow: 0 8px 18px rgba(255, 107, 129, 0.3);
+}
+
+.product-card h3 {
+  margin-top: 0.75rem;
+  color: #ff4d6d;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.product-card p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.product-card p:last-child {
+  font-weight: bold;
+  color: #222;
+}
+
+.product-card i.fa-star {
+  color: #f7c942;
+}
+
+/* Different background colors for each card */
+.product-card:nth-child(6n+1) { background-color: #ffe4e1; }
+.product-card:nth-child(6n+2) { background-color: #e0f7fa; }
+.product-card:nth-child(6n+3) { background-color: #fce4ec; }
+.product-card:nth-child(6n+4) { background-color: #f1f8e9; }
+.product-card:nth-child(6n+5) { background-color: #fff8e1; }
+.product-card:nth-child(6n+6) { background-color: #ede7f6; }

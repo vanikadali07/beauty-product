@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Products – Filter & Sort</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <h1>Beauty Products</h1>
+    <div class="filters">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="skincare">Skincare</option>
+        <option value="makeup">Makeup</option>
+        <option value="haircare">Haircare</option>
+      </select>
+
+      <select id="sortFilter">
+        <option value="default">Sort By</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Rating</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div id="product-list" class="product-grid">
+      <script>
+        const products = [
+          { name: "BB Cream", category: "skincare" },
+          { name: "Lipstick", category: "makeup" },
+          { name: "Shampoo", category: "haircare" },
+          { name: "Moisturizer", category: "skincare" },
+          { name: "Foundation", category: "makeup" },
+          { name: "Eyeliner", category: "makeup" },
+          { name: "Conditioner", category: "haircare" },
+          { name: "Face Wash", category: "skincare" },
+          { name: "Highlighter", category: "makeup" },
+          { name: "Hair Serum", category: "haircare" },
+          { name: "Face Mask", category: "skincare" },
+          { name: "Compact Powder", category: "makeup" },
+          { name: "Hair Oil", category: "haircare" },
+          { name: "Sunscreen", category: "skincare" },
+          { name: "Blush", category: "makeup" },
+          { name: "Toner", category: "skincare" },
+          { name: "Mascara", category: "makeup" },
+          { name: "Hair Gel", category: "haircare" },
+          { name: "Lip Balm", category: "skincare" },
+          { name: "Makeup Remover", category: "makeup" }
+        ];
+
+        let html = "";
+
+        products.forEach((product) => {
+          const price = Math.floor(Math.random() * 400 + 200);
+          const rating = (Math.random() * 1.5 + 3.5).toFixed(1);
+
+          html += `
+            <div class="product-card" data-category="${product.category}" data-price="${price}" data-rating="${rating}">
+              <h3>${product.name}</h3>
+              <p><i class="fas fa-tag"></i> ₹${price}</p>
+              <p><i class="fas fa-star"></i> ${rating}</p>
+            </div>
+          `;
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+          document.getElementById("product-list").innerHTML = html;
+        });
+      </script>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
